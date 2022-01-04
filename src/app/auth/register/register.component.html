@@ -53,7 +53,17 @@
               <div class="form-group">
                 <button type="submit"
                           [disabled]="registerForm.invalid"
-                          class="btn btn-primary submit-btn btn-block">Crear cuenta</button>
+                          class="btn btn-primary submit-btn btn-block"
+                          *ngIf="!cargando">
+                    Crear cuenta
+                </button>
+                <button type="button"
+                          [disabled]="true"
+                          class="btn btn-primary submit-btn btn-block"
+                          *ngIf="cargando">
+                    <i class="fa fa-spin fa-sync"></i>
+                    Crear cuenta
+                </button>
               </div>
 
               <div class="text-block text-center my-3">

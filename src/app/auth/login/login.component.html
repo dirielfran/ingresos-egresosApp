@@ -38,7 +38,14 @@
               <button class="btn btn-primary submit-btn btn-block"
                       type="submit"
                       [disabled]="loginForm.invalid"
-                      >Login</button>
+                      *ngIf="!cargando">Login</button>
+              <button class="btn btn-primary submit-btn btn-block"
+                      type="button"
+                      [disabled]="true"
+                      *ngIf="cargando">
+                  <i class="fa fa-spin fa-sync"></i>
+                  Espere...
+              </button>
             </div>
             <div class="text-block text-center my-3">
               <span class="text-small font-weight-semibold">No estas registrado? </span>
